@@ -3,7 +3,7 @@ The character controller is the most interactive game play element in most of th
 In this tutorial you will learn how to create a third person character controller in unity, as well as a third person camera with collision detection that properly handles indoor collisions as well.  
 
 **Download the project files for this tutorial from [CodeCreatePlay360](https://www.patreon.com/CodeCreatePlay360 "CodeCreatePlay"), it has a starting scene and necessary assets set up for you.**  
-**Visit [Link](https://discord.gg/EKmhB8xTq9 "DiscordChannel") channel for any discussion.**
+**Visit [Discord](https://discord.gg/EKmhB8xTq9 "DiscordChannel") channel for any discussion.**
 
    | ![Image](Images/Unity_fFN03A0AB9.gif) |
    | :--: |
