@@ -12,13 +12,47 @@ In this tutorial you will learn how to create a third person character controlle
 ### Part 1 Character movements
 
 1. Open **SceneStart** from project files, create a new layer **Collision**, select **PrototypeScene** game-object from hierarchy and change its layer to **Collision**, ideally any scene geometry should have this layer, we will use this layer for collision detection. 
-2. From project files drag the **Player** prefab in the scene, set its tag to **Player** it has a **Capsule collider** and a **PlayerAnim.cs** components attached to it make sure of that, drag **PlayerCam.cs** from scripts folder onto the main camera, if it isn't already there, this is basic orbiting camera script, and finally set its tag to **MainCamera**, use a **game-object > capsule** as placeholder for player if you don't have project files, you will have to create a basic orbiting camera script though.
+2. From project files drag the **Player** prefab in the scene, set its tag to **Player**, it has a **Capsule collider** and **Animator** components attached to it make sure of that, drag **PlayerCam.cs** from scripts folder onto the main camera, if it isn't already there, this is basic orbiting camera script, and finally set its tag to **MainCamera**, use a **game-object > capsule** as placeholder for player if you don't have project files, you will have to create a basic orbiting camera script though.  
+
+_Create two new scripts **CharacterMotor.cs** and **PlayerAnim.cs** and attach them to player, copy paste this for both scripts respectively, this is necessary to make Animator work otherwise no animation will be played ( **only do this is you are using project files** )._
+
+```
+public class CharacterMotor : MonoBehaviour
+{
+    // public fields
+    [HideInInspector] public Vector3 velocity = Vector3.zero;
+    public bool grounded = false;
+    public bool jumping = false;
+}
+```
+
+```
+public class PlayerAnim : MonoBehaviour
+{
+    public CharacterMotor character = null;
+    public Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        character = GetComponent<CharacterMotor>();
+    }
+
+    private void Update()
+    {
+        animator.SetBool("grounded", character.grounded);
+        animator.SetBool("shouldMove", character.velocity.magnitude > 0.1f);
+        animator.SetBool("shouldRun", character.velocity.magnitude > 0.1f && Input.GetKey(KeyCode.LeftShift));
+        animator.SetBool("jumping", character.jumping);
+    }
+}
+```
 
    | ![Image](Images/Unity_DXDra0vzVo.gif) |
    | :--: |
    | Default scene |
 
-3. From **project files > Scripts** drag **CharacterMotor.cs** C# script on the player game object.
+3. Roughly, this is how your setup should look like.
 
    | ![Image](Images/Unity_TiS4LuGtgh.png) |
    | :--: |
