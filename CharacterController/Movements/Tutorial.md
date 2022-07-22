@@ -48,7 +48,7 @@ public class PlayerAnim : MonoBehaviour
 }
 ```
 
-   | ![Image](https://i.imgur.com/34eieT9.gif) |
+   | ![Imgur Image](Images/00.gif) |
    | :--: |
    | Default scene |
 
@@ -170,7 +170,7 @@ namespace RPGCharacter
 }
 ```
 
-   | ![Imgur Image](http://i.imgur.com/dmF9bCoh.gif) |
+   | ![Imgur Image](Images/02.gif) |
    | :--: |
    | The PlayAnim.cs attached to character controller properly handles the animator parameters during character movements. |
 
