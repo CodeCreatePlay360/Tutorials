@@ -1,6 +1,5 @@
 ## Create an intermediate level text editor using wxPython
 
-***
 **In this tutorial we will create an slightly advanced notepad with file open, save, edit, copy, paste and a few more features.**  
 **We will use wxPython to create the UI, you should have at least beginner level understanding of it, however I will still try to explain as best as I could as we go along.**
 
