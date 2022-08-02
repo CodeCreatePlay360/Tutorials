@@ -131,6 +131,14 @@ class TextEditorPanel(wx.Panel):
         self.frame.Bind(wx.EVT_MENU, self.on_event)
 
     def on_file_new(self):
+        dialog = wx.MessageDialog(None,
+                                  "Confirm create new file ?",
+                                  "Confirm",
+                                  wx.YES_NO | wx.ICON_EXCLAMATION).ShowModal()
+
+        if dialog != wx.ID_YES:
+            return
+            
         self.save_file_dir = ""
         self.save_file_name = ""
         self.text_editor_ctrl.SetValue("")

@@ -1,0 +1,3 @@
+Artist point is a major upgrade that brings physically based rendering to world machine.
+Create world using PBR materials, import your existing texture libraries, and easily create and export
+all scene elements in one click using gltf.
